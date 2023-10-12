@@ -1,11 +1,14 @@
 body {
     text-align: center;
     padding: 20px;
+    
+}
+.nen {
     background-image: url(https://cdn.sforum.vn/sforum/wp-content/uploads/2023/06/Thumb-hinh-nen-dep-nhat-the-gioi.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100vh;
 }
-
 button {
     margin: 10px;
     padding: 10px 20px;
