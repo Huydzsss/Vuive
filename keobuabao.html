@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keobuaba</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="keobuabao.css">
+</head>
+<body>
+    <h1>Kéo búa bao</h1>
+    <div id="game-container">
+        <button onclick="play(' búa')" class="btn btn-outline-primary">búa</button>
+        <button onclick="play('bao')" class="btn btn-outline-primary">bao</button>
+        <button onclick="play('kéo')" class="btn btn-outline-primary">kéo</button>
+    </div>
+    <div id="result"></div>
+    <audio src="./Am-thanh-chuc-mung-chien-thang-www_nhacchuongvui_com.mp3" type="audio/mpeg " id="winSound"></audio>
+    <audio src="./Am-thanh-tra-loi-sai-www_yeualo_com.mp3" type="audio/mpeg" id="loseSound"></audio>
+    <script>
+        function play(playerChoice){
+            var random = Math.floor(Math.random() * 3);
+            var index = ['kéo', 'búa', 'bao'];
+            var computer = index[random];
+            var kq = Kechienthang(playerChoice, computer);
+            var result = document.getElementById('result');
+            result.innerHTML = `người chọn ${playerChoice}, <br>máy  chọn ${computer}, <br>kết quả ${kq}`;
+            if(kq === 'Nguời chơi thắng'){
+                var winsound = document.getElementById('winSound');
+                winsound.play();
+            }else{
+                var losesound = document.getElementById('loseSound');
+                losesound.play();
+            }
+        }
+        function Kechienthang(playerChoice, computer) {
+            if(playerChoice == computer){
+                return 'hòa'
+            }else if((playerChoice === 'kéo' && computer === 'bao') || (playerChoice === 'búa' && computer === 'kéo') ||
+                (playerChoice === 'bao' && computer === 'búa') ){
+                    return 'Nguời chơi thắng'
+                }else{
+                    return 'máy thắng'
+                }
+        }
+    </script>
+</body>
+</html>
