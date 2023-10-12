@@ -33,7 +33,27 @@
                 var losesound = document.getElementById('loseSound');
                 losesound.play();
             }
-        }
+             var isGameActive = true; 
+            var hasPlayerChosen = false; 
+            if (!isGameActive || hasPlayerChosen) {
+        return; // Nếu trò chơi không hoạt động hoặc người chơi đã chọn trước đó, không cho phép chọn lại
+    }
+    hasPlayerChosen = true;
+};
+        function resetGame() {
+    hasPlayerChosen = false;
+    isGameActive = true;
+    var result = document.getElementById('result');
+    result.innerHTML = '';
+    var winsound = document.getElementById('winSound');
+    winsound.pause();
+    winsound.currentTime = 0;
+    var losesound = document.getElementById('loseSound');
+    losesound.pause();
+    losesound.currentTime = 0;
+}
+        resetGame();
+        
         function Kechienthang(playerChoice, computer) {
             if(playerChoice === computer){
                 if(playerChoice === 'bao'){
