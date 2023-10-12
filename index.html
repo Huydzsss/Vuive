@@ -8,9 +8,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="keobuabao.css">
 </head>
-<body class="bg-img nen">
-    <div class="container">
-        <h1>Kéo búa bao</h1>
+<body>
+    <h1>Kéo búa bao</h1>
     <div id="game-container">
         <button onclick="play(' búa')" class="btn btn-outline-primary">búa</button>
         <button onclick="play('bao')" class="btn btn-outline-primary">bao</button>
@@ -19,8 +18,6 @@
     <div id="result"></div>
     <audio src="./Am-thanh-chuc-mung-chien-thang-www_nhacchuongvui_com.mp3" type="audio/mpeg " id="winSound"></audio>
     <audio src="./Am-thanh-tra-loi-sai-www_yeualo_com.mp3" type="audio/mpeg" id="loseSound"></audio>
-    </div>
-    
     <script>
         function play(playerChoice){
             var random = Math.floor(Math.random() * 3);
@@ -32,42 +29,14 @@
             if(kq === 'Nguời chơi thắng'){
                 var winsound = document.getElementById('winSound');
                 winsound.play();
-            }else if(kq === 'máy thắng'){
+            }else{
                 var losesound = document.getElementById('loseSound');
                 losesound.play();
             }
-             var isGameActive = true; 
-            var hasPlayerChosen = false; 
-            if (!isGameActive || hasPlayerChosen) {
-        return; // Nếu trò chơi không hoạt động hoặc người chơi đã chọn trước đó, không cho phép chọn lại
-    }
-    hasPlayerChosen = true;
-};
-        function resetGame() {
-    hasPlayerChosen = false;
-    isGameActive = true;
-    var result = document.getElementById('result');
-    result.innerHTML = '';
-    var winsound = document.getElementById('winSound');
-    winsound.pause();
-    winsound.currentTime = 0;
-    var losesound = document.getElementById('loseSound');
-    losesound.pause();
-    losesound.currentTime = 0;
-}
-        resetGame();
-        
+        }
         function Kechienthang(playerChoice, computer) {
-            if(playerChoice === computer){
-                if(playerChoice === 'bao'){
-                    return 'bao và bao, hòa';
-                }else if(playerChoice === 'kéo'){
-                    return 'kéo và kéo, hòa';
-                }else if(playerChoice === 'búa'){
-                    return 'búa và búa, hòa';
-                }else{
+            if(playerChoice == computer){
                 return 'hòa'
-                }   
             }else if((playerChoice === 'kéo' && computer === 'bao') || (playerChoice === 'búa' && computer === 'kéo') ||
                 (playerChoice === 'bao' && computer === 'búa') ){
                     return 'Nguời chơi thắng'
@@ -78,3 +47,4 @@
     </script>
 </body>
 </html>
+
