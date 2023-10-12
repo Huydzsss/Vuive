@@ -36,7 +36,15 @@
         }
         function Kechienthang(playerChoice, computer) {
             if(playerChoice === computer){
+                if(playerChoice === 'bao'){
+                    return 'bao và bao, hòa';
+                }else if(playerChoice === 'kéo'){
+                    return 'kéo và kéo, hòa';
+                }else if(playerChoice === 'búa'){
+                    return 'búa và búa, hòa';
+                }else{
                 return 'hòa'
+                }   
             }else if((playerChoice === 'kéo' && computer === 'bao') || (playerChoice === 'búa' && computer === 'kéo') ||
                 (playerChoice === 'bao' && computer === 'búa') ){
                     return 'Nguời chơi thắng'
