@@ -1,6 +1,9 @@
 body {
     text-align: center;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     
 }
 .nen {
@@ -34,4 +37,7 @@ div img {
     width: 30px; 
     height: 30px;
     margin-left: 10px; 
+}
+.content {
+    flex: 1;
 }
