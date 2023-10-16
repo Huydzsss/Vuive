@@ -19,3 +19,19 @@ button {
     font-size: 24px;
     margin-top: 20px;
 }
+.btn-outline-primary:active {
+    transform: scale(0.9);
+}
+.btn-outline-primary:hover {
+    filter: brightness(1.2); 
+}
+#game-container button img {
+    width: 30px; 
+    height: 30px;
+    margin-left: 10px; 
+}
+div img {
+    width: 30px; 
+    height: 30px;
+    margin-left: 10px; 
+}
